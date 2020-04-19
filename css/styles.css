@@ -1,8 +1,14 @@
 html{
+    box-sizing: border-box;
     font-size: 62.5%;   /*reset for REMS 62.5 = 10px de 16px*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
 }
 body{
     font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2; /*espaciado*/
 }
 /*Globales*/
 .contenedor{
@@ -22,7 +28,44 @@ h4{
     font-size: 2.6rem;
 }
 
+/*utilidades*/
+img{
+    max-width: 100%; /*ajustarse al contenedor*/
+}
+.seccion{
+    margin-top: 2rem;
+}
+.fw-300{
+    font-weight: 300;
+}
+.centrar-texto{
+    text-align: center;
+}
+.display-block{
+    display: block!important;
+}
+/**BOTONES**/
+.boton{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    text-align: center;
+    display: inline-block;
+}
+.boton-amarillo{
+    background-color: #E08709;
+}
+.boton-verde{
+    background-color: #71B100;
+}
 /*header*/
+.site-header{
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
 .site-header.inicio{
     background: url(../img/header.jpg);
     background-position: center center; /*posicionar la imagen a partir del centro*/
@@ -62,4 +105,170 @@ h4{
 }
 .navegacion a:last-of-type{
     margin: 0;
+}
+/*iconos nosotros*/
+
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+.icono{
+    flex-basis: calc( 33.3% -1rem ); /*width*/
+    text-align: center;
+}
+.icono h3{
+    text-transform: uppercase;
+}
+
+/**Anuncios**/
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+}
+.anuncio{
+    flex-basis: calc(33.3% - 1rem);
+    border: 2px solid #b5b5b5;  /* width, fill, color */
+    background-color: #F5F5F5;
+}
+.contenido-anuncio{
+    padding: 2rem;      /*top, right, bottom, left*/
+}
+.contenido-anuncio h3,
+.contenido-anuncio p{
+    margin: 0;
+}
+.precio{
+    color: #71b100;
+    font-weight: 700;
+}
+.iconos-caracteristicas{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.iconos-caracteristicas li{
+    display: flex;
+    /*justify-content: space-between;*/
+}
+.iconos-caracteristicas li p{
+    margin-left: 1.5rem;
+}
+.ver-todas{
+    display: flex;
+    justify-content: end;
+}
+
+/**CONTACTO**/
+.imagen-contacto{
+    margin-top: 2rem;
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+.contenido-contacto{
+    flex: 1;/*detecta el ancho y de acuerdo al numero de elementos, realiza la división*/
+    color: white;
+}
+.contenido-contacto p{
+    font-size: 1.8rem;
+}
+
+/**BLOG**/
+
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+.seccion-inferior .blog{
+    flex-basis: 60%;
+}
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+.entrada-blog .imagen{
+    flex-basis: 40%;
+}
+.entrada-blog .texto-entrada{
+    flex-basis: calc(60% - 3rem);
+}
+.entrada-blog a{
+    color: black;
+    text-decoration: none;
+}
+.texto-entrada h4{
+    margin: 0;  
+    line-height: 1.4;
+}
+.texto-entrada h4::after{
+    content: "";
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color:#71B100;
+}
+.texto-entrada span{
+    color: chocolate;
+}
+/**Testimoniales**/
+.testimonial{
+    background-color: #71B100;
+    font-size: 2rem;
+    color: white;
+    padding: 3rem;
+    border-radius: 2rem;
+    position: relative;
+}
+.testimonial p{
+    text-align: right;
+    font-weight: 700;
+}
+.testimonial blockquote{
+    padding-left: 5rem;
+    font-weight: 300;
+}
+.testimonial blockquote::before{
+    content: "";
+    display: block;
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: 5rem;
+}
+.footer-home{
+    background-color:#333333;
+    color: white;
+    padding: 3rem 0;
+}
+.contenido-footer{
+    display: flex;
+    justify-content: space-between ;
+}
+.copyright{
+    margin: 0;
+}
+
+/**Internas**/
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 50% 50%;/*Divide el ancho en dos fraccions y asigna una fracción a cada hijo*/
+    grid-column-gap: 3rem; /*separación entre los elementos*/
+}
+
+.info-nosotros blockquote{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 5rem 0 2rem 0;
 }
