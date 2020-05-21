@@ -44,6 +44,10 @@ img{
 .display-block{
     display: block!important;
 }
+.contenido-centrado{
+    max-width: 80rem;
+}
+
 /**BOTONES**/
 .boton{
     color: white;
@@ -54,6 +58,10 @@ img{
     margin-top: 2rem;
     text-align: center;
     display: inline-block;
+    border: none;
+}
+.boton:hover{
+    cursor: pointer;
 }
 .boton-amarillo{
     background-color: #E08709;
@@ -124,11 +132,14 @@ img{
 .contenedor-anuncios{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /*especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. */
 }
 .anuncio{
-    flex-basis: calc(33.3% - 1rem);
+    flex: 0 0 calc(33.3% - 1rem); /*grande, pequeño,  base*/
+    /* flex-shrink: 0; 1: hacer el elemento lo más pequeño posible, 0: ajustarse al tamaño de la base*/
     border: 2px solid #b5b5b5;  /* width, fill, color */
     background-color: #F5F5F5;
+    margin-bottom: 2rem;
 }
 .contenido-anuncio{
     padding: 2rem;      /*top, right, bottom, left*/
@@ -146,6 +157,8 @@ img{
     padding: 0;
     display: flex;
     justify-content: space-evenly;
+    flex: 1;    /*los elementos deben crecer*/
+    max-width: 500px; /*tamaño limitado*/
 }
 .iconos-caracteristicas li{
     display: flex;
@@ -271,4 +284,54 @@ img{
     font-weight: 900;
     font-size: 2rem;
     margin: 5rem 0 2rem 0;
+}
+
+/*Anuncio*/
+.resumen-caracteristicas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*alinear verticalmente*/
+}
+
+/*Formulario*/
+legend{
+    color: #333333;
+    font-size: 2rem;
+}
+
+label{
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+input:not([type="submit"]),
+textarea,
+select{
+    display: block;
+    padding: 1rem;  
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+}
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+textarea{
+    height: 20rem;
+}
+.forma-contacto{
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form p{
+    margin: 3rem 0 0 0;
+    font-size: 1.8rem;
+}
+input[type="radio"]{
+    margin: 0;
 }
